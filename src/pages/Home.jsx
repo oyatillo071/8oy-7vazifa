@@ -13,11 +13,11 @@ function Home() {
   });
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <h2 className="text-center mt-10">Loading...</h2>;
   }
 
   if (isError) {
-    return <p>Xato {error.message}</p>;
+    return <h2 className="text-center mt-10">Xato {error.message}</h2>;
   }
   console.log(data);
 

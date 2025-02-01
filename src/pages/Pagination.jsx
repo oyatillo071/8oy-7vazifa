@@ -8,7 +8,7 @@ function Pagination() {
   function paginate({ queryKey }) {
     const pageNum = queryKey[1];
     return axios.get(
-      `https://jsonplaceholder.typicode.com/posts?_limit=12&_page=${pageNum}`
+      `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${pageNum}`
     );
   }
 
@@ -21,7 +21,7 @@ function Pagination() {
     <div className="p-5 container ">
       {isLoading && <h2>Loading....</h2>}
       {isError && <h2>Error to fetch data</h2>}
-      <div className="grid grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {data?.data.length > 0 &&
           data.data.map((value) => {
             return (
@@ -44,7 +44,7 @@ function Pagination() {
         >
           Prev Page
         </button>
-        <span className="p-2  text-lg">{page}</span>
+        <span className="p-2 text-3xl">{page}</span>
         <button
           className="p-2 border-2 rounded-md "
           onClick={() => setPage((prev) => prev + 1)}

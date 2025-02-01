@@ -7,6 +7,7 @@ import TOdo from "./pages/Todo";
 import MainLayout from "./layout/Mainayout";
 import Pagination from "./pages/Pagination";
 import PostDAta from "./pages/PostDAta";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -18,6 +19,14 @@ function App() {
             element={
               <MainLayout>
                 <Increment />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <MainLayout>
+                <Login />
               </MainLayout>
             }
           />

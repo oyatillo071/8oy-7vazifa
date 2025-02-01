@@ -5,7 +5,6 @@ function Increment() {
 
   return (
     <div className="flex  flex-col items-center gap-2">
-      <h1 className="p-2  w-20 rounded-md text-center ">{counter}</h1>
       <div className="gap-2 flex">
         <button
           className=" p-2  rounded-md w-20 bg-black text-white"
@@ -13,6 +12,7 @@ function Increment() {
         >
           +
         </button>
+        <h1 className="p-2 text-5xl w-20 rounded-md text-center ">{counter}</h1>
         <button
           className=" p-2  rounded-md w-20 bg-black text-white"
           onClick={decrement}

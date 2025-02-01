@@ -1,11 +1,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useLoginStore from "../store/useLoginStore";
 
 function MainLayout({ children }) {
+  const { user } = useLoginStore();
   return (
     <div>
-      <nav className="bg-black p-4 ">
+      <nav className="bg-black p-4 text-white rounded-md">
         <ul className="flex items-center justify-evenly">
+          <li className="px-4 py-2 border border-white rounded-md font-bold">
+            {user ? "User Loged" : "User Unloged"}
+          </li>
+          <li>
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white underline underline-offset-8"
+                  : "text-gray-200"
+              }
+            >
+              Login
+            </NavLink>
+          </li>
           <li>
             <NavLink
               to="/"
