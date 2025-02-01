@@ -79,7 +79,7 @@ function Todo() {
                 <div>
                   <button
                     onClick={() => toggleTodo(todo.id)}
-                    className="mr-2 p-1 bg-blue-600 text-white rounded"
+                    className="mr-2 p-1 bg-black text-white rounded"
                   >
                     Toggle
                   </button>

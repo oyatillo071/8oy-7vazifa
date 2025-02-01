@@ -28,12 +28,12 @@ function PostDAta() {
 
   return (
     <div>
-      <h1
-        className="p-2 cursor-pointer bg-blue-500 font-bold rounded-md w-20 text-center text-white"
+      <button
+        className="p-2 cursor-pointer bg-black font-bold rounded-md w-20 text-center text-white"
         onClick={postFunc}
       >
-        Post
-      </h1>
+        Post yuborish
+      </button>
     </div>
   );
 }

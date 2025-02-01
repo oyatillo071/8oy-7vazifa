@@ -22,6 +22,14 @@ function App() {
             }
           />
           <Route
+            path="/pagination"
+            element={
+              <MainLayout>
+                <Pagination />
+              </MainLayout>
+            }
+          />
+          <Route
             path="/"
             element={
               <MainLayout>

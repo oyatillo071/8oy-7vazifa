@@ -5,7 +5,7 @@ import React, { useState } from "react";
 function Pagination() {
   const [page, setPage] = useState(1);
 
-  function paginateApi({ queryKey }) {
+  function paginate({ queryKey }) {
     const pageNum = queryKey[1];
     return axios.get(
       `https://jsonplaceholder.typicode.com/posts?_limit=12&_page=${pageNum}`
@@ -14,14 +14,14 @@ function Pagination() {
 
   const { data, isError, isLoading } = useQuery({
     queryKey: ["posts", page],
-    queryFn: paginateApi,
+    queryFn: paginate,
   });
 
   return (
     <div className="p-5 container ">
       {isLoading && <h2>Loading....</h2>}
       {isError && <h2>Error to fetch data</h2>}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-6 gap-4">
         {data?.data.length > 0 &&
           data.data.map((value) => {
             return (
@@ -29,9 +29,7 @@ function Pagination() {
                 className="border-2 shadow-lg rounded-lg  p-5 "
                 key={value.id}
               >
-                <h3 className="border flex justify-center  font-bold rounded-full  p-2 w-12 mx-auto">
-                  {value.id}
-                </h3>
+                <h3>{value.id}</h3>
                 <h3 className="text-center mt-2">{value.title}</h3>
               </div>
             );
@@ -40,13 +38,13 @@ function Pagination() {
 
       <div className="flex justify-center gap-4 mt-6">
         <button
-          className="p-2 border-2 rounded-md   disabled:opacity-50"
+          className="p-2 border-2 rounded-md   "
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-          disabled={page === 1}
+          disabled={page == 1}
         >
           Prev Page
         </button>
-        <span className="p-2 font-bold text-lg">{page}</span>
+        <span className="p-2  text-lg">{page}</span>
         <button
           className="p-2 border-2 rounded-md "
           onClick={() => setPage((prev) => prev + 1)}

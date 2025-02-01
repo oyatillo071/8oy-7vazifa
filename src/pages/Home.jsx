@@ -26,7 +26,7 @@ function Home() {
       {data.data.length > 0 &&
         data.data.map(function (value, index) {
           return (
-            <div className="px-2 py1 border border-primary rounded-md">
+            <div className="px-2 py-4 gap-5 border flex items-center border-primary rounded-md">
               <h3>{value.id}</h3>
               <h3>
                 {value.name}- {value.username}

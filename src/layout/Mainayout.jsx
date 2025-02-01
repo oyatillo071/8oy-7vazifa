@@ -4,13 +4,15 @@ import { NavLink } from "react-router-dom";
 function MainLayout({ children }) {
   return (
     <div>
-      <nav className="bg-blue-500 p-4">
-        <ul className="flex space-x-4">
+      <nav className="bg-black p-4 ">
+        <ul className="flex items-center justify-evenly">
           <li>
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? "text-white font-bold" : "text-gray-200"
+                isActive
+                  ? "text-white underline underline-offset-8"
+                  : "text-gray-200"
               }
             >
               Home
@@ -20,7 +22,9 @@ function MainLayout({ children }) {
             <NavLink
               to="/increment"
               className={({ isActive }) =>
-                isActive ? "text-white font-bold" : "text-gray-200"
+                isActive
+                  ? "text-white underline underline-offset-8"
+                  : "text-gray-200"
               }
             >
               Increment
@@ -30,7 +34,9 @@ function MainLayout({ children }) {
             <NavLink
               to="/todo"
               className={({ isActive }) =>
-                isActive ? "text-white font-bold" : "text-gray-200"
+                isActive
+                  ? "text-white underline underline-offset-8"
+                  : "text-gray-200"
               }
             >
               Todo
@@ -40,10 +46,24 @@ function MainLayout({ children }) {
             <NavLink
               to="/post"
               className={({ isActive }) =>
-                isActive ? "text-white font-bold" : "text-gray-200"
+                isActive
+                  ? "text-white underline underline-offset-8"
+                  : "text-gray-200"
               }
             >
               Post Data
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/pagination"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white underline underline-offset-8"
+                  : "text-gray-200"
+              }
+            >
+              Pagination
             </NavLink>
           </li>
         </ul>
